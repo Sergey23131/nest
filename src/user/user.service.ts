@@ -13,5 +13,4 @@ export class UserService {
         const user = await this.userRepository.create(dto);
         return user;
     }
-
 }
