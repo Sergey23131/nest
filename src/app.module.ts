@@ -16,6 +16,7 @@ import {TypeOrmModule} from "@nestjs/typeorm";
             entities: [__dirname + '/**/*.entity{.ts,.js}'],
             migrationsRun: true,
             migrations: ['dist/database/migrations/*.js'],
+            migrationsTableName:'CreateUserTable'
          //   cli: {migrationsDir: 'database/migrations'}
         }), UserModule],
     controllers: [UserController],
