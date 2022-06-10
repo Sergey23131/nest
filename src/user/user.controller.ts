@@ -10,15 +10,16 @@ export class UserController {
     constructor(private userService: UserService) {
     }
 
-    @ApiOperation({summary:'Get all users'})
+    @ApiOperation({summary: 'Get all users'})
     @Get()
     getAllUsers() {
-        return {name: 'Vasya', age: 13, status: false};
+        return this.userService.getAllUsers();
     }
 
-    @ApiOperation({summary:'Create new user'})
+    @ApiOperation({summary: 'Create new user'})
     @Post()
     createUser(@Body() userDto: CreateUserDto) {
-return this.userService
+        return this.userService.createUser(userDto);
     }
+
 }

@@ -12,13 +12,13 @@ export class User extends AbstractEntity {
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column({type: 'varchar', unique: true, allowNull: false})
+    @Column({type: 'varchar', unique: true, nullable: false})
     email: string;
 
-    @Column({type: 'varchar', allowNull: false})
+    @Column({type: 'varchar', nullable: false})
     password: string;
 
-    @Column({type: 'varchar', allowNull: false})
+    @Column({type: 'varchar', nullable: false})
     city: string;
 
     @Column({type: 'boolean'})
