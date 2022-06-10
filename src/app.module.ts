@@ -3,6 +3,7 @@ import {SequelizeModule} from '@nestjs/sequelize';
 import {UserController} from './user/user.controller';
 import {UserModule} from './user/user.module';
 import { User } from './user/users.model';
+require('dotenv').config()
 
 @Module({
     imports: [
