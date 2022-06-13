@@ -11,7 +11,7 @@ import {TypeOrmModule} from "@nestjs/typeorm";
         TypeOrmModule.forFeature([User])
     ],
     exports: [
-        UserService
+        UserService,
     ]
 })
 export class UserModule {
