@@ -4,7 +4,7 @@ import {UserController} from './user/user.controller';
 import {UserModule} from './user/user.module';
 import { User } from './user/users.model';
 import { PostsController } from './posts/posts.controller';
-import { PostsModule } from './posts/posts.module';
+import { PostModule } from './posts/posts.module';
 import { Post } from './posts/posts.model';
 import { FilesService } from './files/files.service';
 import { FilesModule } from './files/files.module';
@@ -21,7 +21,7 @@ require('dotenv').config()
             database: process.env.POSTGRES_DATABASE,
             models: [User,Post],
             autoLoadModels: true,
-        }), UserModule, PostsModule, FilesModule],
+        }), UserModule, PostModule, FilesModule],
     controllers: [UserController, PostsController],
     providers: [FilesService],
 })

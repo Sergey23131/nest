@@ -6,8 +6,6 @@ interface UserCreationAttrs {
     email: string;
     password: string;
     username: string;
-    city: string;
-    status: boolean;
 }
 
 @Table({tableName: 'users'})
