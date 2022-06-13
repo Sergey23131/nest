@@ -9,9 +9,20 @@ export class UserService {
 
     }
 
+    async getAllUsers() {
+        return this.userRepository.findAll();
+    }
+
+    async getOneUser(id: number) {
+        return this.userRepository.findOne({where: {id}})
+    }
+
+    async getUserByEmail(email: string) {
+        return this.userRepository.findOne({where: {email}})
+    }
+
     async createUser(dto: CreateUserDto) {
-        const user = await this.userRepository.create(dto);
-        return user;
+        return this.userRepository.create(dto)
     }
 
 }

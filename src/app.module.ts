@@ -3,6 +3,11 @@ import {SequelizeModule} from '@nestjs/sequelize';
 import {UserController} from './user/user.controller';
 import {UserModule} from './user/user.module';
 import { User } from './user/users.model';
+import { PostsController } from './posts/posts.controller';
+import { PostsModule } from './posts/posts.module';
+import { Post } from './posts/posts.model';
+import { FilesService } from './files/files.service';
+import { FilesModule } from './files/files.module';
 require('dotenv').config()
 
 @Module({
@@ -14,11 +19,11 @@ require('dotenv').config()
             username: process.env.POSTGRES_USER,
             password: String(process.env.POSTGRES_PASSWORD),
             database: process.env.POSTGRES_DATABASE,
-            models: [User],
+            models: [User,Post],
             autoLoadModels: true,
-        }), UserModule],
-    controllers: [UserController],
-    providers: [],
+        }), UserModule, PostsModule, FilesModule],
+    controllers: [UserController, PostsController],
+    providers: [FilesService],
 })
 export class AppModule {
 }
