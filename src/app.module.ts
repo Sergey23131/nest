@@ -6,8 +6,9 @@ import { User } from './user/users.model';
 import { PostsController } from './posts/posts.controller';
 import { PostModule } from './posts/posts.module';
 import { Post } from './posts/posts.model';
-import { FilesService } from './files/files.service';
 import { FilesModule } from './files/files.module';
+import { AuthController } from './auth/auth.controller';
+import { AuthModule } from './auth/auth.module';
 require('dotenv').config()
 
 @Module({
@@ -21,9 +22,9 @@ require('dotenv').config()
             database: process.env.POSTGRES_DATABASE,
             models: [User,Post],
             autoLoadModels: true,
-        }), UserModule, PostModule, FilesModule],
-    controllers: [UserController, PostsController],
-    providers: [FilesService],
+        }), UserModule, PostModule, FilesModule, AuthModule],
+    controllers: [UserController, PostsController, AuthController],
+    providers: [],
 })
 export class AppModule {
 }
